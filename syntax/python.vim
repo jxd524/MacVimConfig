@@ -474,6 +474,9 @@ else
   syn sync maxlines=200
 endif
 
+"修改函数名高亮"
+syn match pythonBuiltinFunc /\<\w\+\%(\s*(\)\@=/
+
 if version >= 508 || !exists("did_python_syn_inits")
   if version <= 508
     let did_python_syn_inits = 1
@@ -486,6 +489,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   ""syn match pythonOper    "=\|+\|-\|*\|{\|}\|[\|]\|(\|)\|\.\|,"
   ""HiLink pythonOper            Operator " SpecialKey
   ""
+  "highlight Functions
 
   HiLink pythonStatement        Statement
   HiLink pythonImport           Include

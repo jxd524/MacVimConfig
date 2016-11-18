@@ -33,7 +33,7 @@
 "删除
     inoremap <C-k> <C-o>d$
     inoremap <S-BS> <ESC>d^xa
-
+    inoremap <C-d> <Right><BS>
 "选择
     inoremap <expr> <S-Up> pumvisible() ? "\<S-Up>" : "\<C-o>v<Up>"
     inoremap <expr> <S-Down> pumvisible() ? "\<S-Down>" : "\<C-o>v<Down>"
