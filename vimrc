@@ -111,9 +111,21 @@ EOF
 "   
 "************************************************************
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-""    let g:pydiction_location="/Users/terry/.vim/bundle/Pydiction/complete-dict"
+"    let g:pydiction_location="/Users/terry/.vim/bundle/Pydiction/complete-dict"
 ""    let g:pydiction_menu_height = 3
 
+"************************************************************
+"
+"   nerdcommenter 插件
+"   https://github.com/scrooloose/nerdcommenter
+"   
+"************************************************************
+    vmap <D-/> <leader>c<Space>
+    imap <D-/> <ESC><leader>c<Space>a
+    nmap <D-/> <leader>c<Space>
+
+"************************************************************
+"
 "************************************************************
 "
 "   Ctrlp插件:
@@ -156,6 +168,7 @@ EOF
     set cursorcolumn
     set completeopt=menu,preview,longest
     set textwidth=500
+    set vb
     set showmode                    " Display the current mode
     set number                      " Line numbers on
     set wrap                        " Auto wrap long lines, nowrap is not
