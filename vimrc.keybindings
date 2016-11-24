@@ -1,5 +1,5 @@
 
-
+""尽量与XCode的快捷相同
 "修改系统快捷键
     inoremap <expr> <ESC>      pumvisible() ? "\<ESC>a" : "\<ESC>"
     inoremap <expr> <CR>       pumvisible() ? "\<ESC>a" : "\<CR>"
@@ -8,15 +8,23 @@
     inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
     inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
     inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+    inoremap <expr> <Tab>      pumvisible() ? "\<C-n>" : "<Tab>"
     
     nnoremap <Tab> i<Tab>
+
+"绑定具体插件的命令<D-Space>
+    nmap <F2> <ESC>:TlistOpen<CR>
+    imap <F2> <ESC>:TlistOpen<CR>
+    nmap <F3> <ESC>:NERDTreeFocus<CR>
+    imap <F3> <ESC>:NERDTreeFocus<CR>
+
 "光栅移动 向前一个单词
-    inoremap <C-j> <C-o>b
-    noremap <C-j> b
+    inoremap <C-j> <ESC><ESC>bi
+    noremap <C-j> bi
 
 "光栅移动 向后一个单词
     inoremap <C-l> <C-o>e<C-o>a
-    noremap <C-l> ea
+    nnoremap <C-l> ea
 
 "光栅移动 向下一行
     inoremap <C-n> <Down>
@@ -29,11 +37,13 @@
 
 "光栅移动  向上一行
     inoremap <C-p> <Up>
+    nnoremap <C-p> <Up>
 
 "删除
     inoremap <C-k> <C-o>d$
     inoremap <S-BS> <ESC>d^xa
     inoremap <C-d> <Right><BS>
+    inoremap <C-h> <BS>
 "选择
     inoremap <expr> <S-Up> pumvisible() ? "\<S-Up>" : "\<C-o>v<Up>"
     inoremap <expr> <S-Down> pumvisible() ? "\<S-Down>" : "\<C-o>v<Down>"
@@ -89,7 +99,7 @@
             exec "!go build %<"
             exec "!time go run %"
         elseif &filetype == 'mkd' || &filetype == 'md'
-            exec "!open http://126.0.0.1:4000/index.html"
+            exec "!open http://127.0.0.1:4000/index.html"
         endif
     endfunc
 

@@ -64,9 +64,8 @@ EOF
 "   https://github.com/jistr/vim-nerdtree-tabs
 "
 "************************************************************
-    nnoremap <D-1> :NERDTreeToggle<CR><C-w><C-l>
-    imap <D-1> <ESC><D-1>a
     let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+
 "************************************************************
 "
 "   Ultisnips 插件
@@ -123,6 +122,46 @@ EOF
     vmap <D-/> <leader>c<Space>
     imap <D-/> <ESC><leader>c<Space>a
     nmap <D-/> <leader>c<Space>
+
+"************************************************************
+"
+"   taglist插件:
+"   taglist.vim
+"
+"************************************************************
+    "let Tlist_Show_One_File=1
+    let Tlist_Exit_OnlyWindow=1
+    let Tlist_File_Fold_Auto_Close=1
+    let Tlist_Use_Left_Window=1
+    let Tlist_Show_Menu=1
+    "let Tlist_Auto_Open=1
+
+"************************************************************
+"
+"   winmanager插件:
+"   winmanager
+"
+"************************************************************
+    let g:AutoOpenWinManager = 1
+    let g:winManagerWidth = 30
+    let g:winManagerWindowLayout = "NERDTree|TagList"
+    let g:NERDTree_title = "[NERDTree]"
+    function! NERDTree_Start()
+        exec 'NERDTree'
+    endfunction
+    function! NERDTree_IsValid()
+        return 1
+    endfunction
+    function! MyWinManagerToggle()
+        exec "WMToggle"
+        if IsWinManagerVisible()
+            "删除NERD插件生成的空白缓冲区"
+            exec "bdelete! 2"
+        endif
+    endfunction
+    nnoremap <D-1> :call MyWinManagerToggle()<CR>
+    imap <D-1> <ESC><D-1>a
+
 
 "************************************************************
 "
@@ -237,16 +276,10 @@ EOF
 "   自动化命令
 "
 "************************************************************
-"   加载完成
-"    func! DoVimEnterHandle()
-"        "启动NERDTree插件
-"        "exec "NERDTree"
-"        "wincmd w
-"        normal a
-"        "insertmode
-"    endfunc
-"    au VimEnter * :call DoVimEnterHandle()
-
+    function! DoVimEnter()
+        :call MyWinManagerToggle()
+    endfunction
+    autocmd VimEnter * :call DoVimEnter()
 "   离开插入模式
     func! DoInsertLeave()
         if pumvisible() == 0
@@ -270,7 +303,7 @@ EOF
 "
 "************************************************************
 
-source ~/.vim/vimrc.keybindings
+    source ~/.vim/vimrc.keybindings
 
 "************************************************************
 "
