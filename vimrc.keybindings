@@ -49,6 +49,8 @@
     inoremap <expr> <S-Down> pumvisible() ? "\<S-Down>" : "\<C-o>v<Down>"
     inoremap <expr> <S-Left> pumvisible() ? "\<S-Left>" : "\<C-o>v<Left>"
     inoremap <expr> <S-Right> pumvisible() ? "\<S-Right>" : "\<C-o>v<Right>"
+    inoremap <S-C-n> <ESC>v<Down>
+    inoremap <S-C-p> <ESC>v<Up>
 
 "自动补全
     inoremap ( ()<ESC>i
