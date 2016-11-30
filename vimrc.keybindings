@@ -8,7 +8,7 @@
     inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
     inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
     inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-    inoremap <expr> <Tab>      pumvisible() ? "\<C-n>" : "<Tab>"
+    ""inoremap <expr> <Tab>      pumvisible() ? "\<C-n>" : "<Tab>"
     
     nnoremap <Tab> i<Tab>
 
@@ -49,8 +49,8 @@
     inoremap <expr> <S-Down> pumvisible() ? "\<S-Down>" : "\<C-o>v<Down>"
     inoremap <expr> <S-Left> pumvisible() ? "\<S-Left>" : "\<C-o>v<Left>"
     inoremap <expr> <S-Right> pumvisible() ? "\<S-Right>" : "\<C-o>v<Right>"
-    inoremap <S-C-n> <ESC>v<Down>
-    inoremap <S-C-p> <ESC>v<Up>
+    ""inoremap <C-N> <ESC>v<Down>
+    ""inoremap <C-P> <ESC>v<Up>
 
 "自动补全
     inoremap ( ()<ESC>i
