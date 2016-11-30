@@ -33,7 +33,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'taglist.vim'
 Plugin 'winmanager'
 ""Plugin 'godlygeek/tabular'
-""Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
