@@ -13,10 +13,10 @@
     nnoremap <Tab> i<Tab>
 
 "绑定具体插件的命令<D-Space>
-    nmap <F2> <ESC>:TlistOpen<CR>
-    imap <F2> <ESC>:TlistOpen<CR>
-    nmap <F3> <ESC>:NERDTreeFocus<CR>
-    imap <F3> <ESC>:NERDTreeFocus<CR>
+    nmap <F2> <ESC>:NERDTreeFocus<CR>
+    imap <F2> <ESC>:NERDTreeFocus<CR>
+    nmap <F3> <ESC>:TlistOpen<CR>
+    imap <F3> <ESC>:TlistOpen<CR>
 
 "光栅移动 向前一个单词
     inoremap <C-j> <ESC><ESC>bi
