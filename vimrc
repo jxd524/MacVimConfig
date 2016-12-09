@@ -280,7 +280,7 @@ EOF
 "   搜索设置相关
 "
 "************************************************************
-    set ignorecase                  " Case insensitive search
+    "set ignorecase                  " Case insensitive search
     set hlsearch
     set incsearch
 
